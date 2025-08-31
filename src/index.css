@@ -40,3 +40,14 @@ main{
   margin-bottom: 2px;
   list-style: none;
 }
+
+form input{
+  width: 70%;
+  height: 30px;
+  margin-right: 10px;
+}
+
+form button{
+  width: 20%;
+  height: 30px;
+}

@@ -21,6 +21,7 @@ let Lista_Articoli = [
 ]
 
 
+
 const Main = () => {
     return(
         <main>
@@ -29,6 +30,12 @@ const Main = () => {
                 {Lista_Articoli.map((articolo) => {
                     return <Lista key={articolo.id} articolo = {articolo}></Lista>
                 })}
+            </div>
+            <div className="container">
+                <form>
+                    <input type="text"value=""placeholder="Aggiungi articolo"/>
+                    <button type="submit">Aggiungi</button>
+                </form>
             </div>
         </main>
     )
