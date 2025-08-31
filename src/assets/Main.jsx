@@ -24,20 +24,26 @@ let Lista_Articoli = [
 
 
 const Main = () => {
+    //lista iniziale
     const [articoliLista, setArticoliLista] = useState(Lista_Articoli);
+    //lista aggiornata con il form
     const [nuovoArticoloLista, setNuovoArticoloLista] = useState("");
 
     //EVENTO
     const handleArticoli = (event) => {
+
         event.preventDefault();
         const articoloLista = nuovoArticoloLista.trim();
 
+        //crea il nuovo oggetto creato tramite la compilazione del form
         const nuovoArticoloForm = {
             id: articoliLista.length+1,
             articolo: articoloLista
         }
 
+        //lista aggiornata
         setArticoliLista([...articoliLista, nuovoArticoloForm]);
+        //reset imput dopo l'aggiunte dell'articolo
         setNuovoArticoloLista("");        
     }
 
