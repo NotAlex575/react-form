@@ -25,7 +25,10 @@ const Main = () => {
     return(
         <main>
             <div className="container">
-                <Lista></Lista>
+                <h2>Lista</h2>
+                {Lista_Articoli.map((articolo) => {
+                    return <Lista key={articolo.id} articolo = {articolo}></Lista>
+                })}
             </div>
         </main>
     )

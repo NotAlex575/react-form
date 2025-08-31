@@ -1,24 +1,13 @@
-const Lista = () => {
-    return(
-        <div>
-            <h2>Lista</h2>
-            <ul>
-                <li>test</li>
-            </ul>
-            <ul>
-                <li>test</li>
-            </ul>
-            <ul>
-                <li>test</li>
-            </ul>
-            <ul>
-                <li>test</li>
-            </ul>
-            <ul>
-                <li>test</li>
-            </ul>
-        </div>
-    )
-}
+let Lista = ({ articolo }) => {
+  return (
+    <div>
+      <ul>
+        <li>{articolo.articolo}</li>
+      </ul>
+    </div>
+  );
+};
 
-export default Lista
+
+
+export default Lista;
