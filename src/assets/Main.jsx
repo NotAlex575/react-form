@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Lista from "./Lista";
 
 let Lista_Articoli = [
@@ -23,18 +24,39 @@ let Lista_Articoli = [
 
 
 const Main = () => {
+    const [articoliLista, setArticoliLista] = useState(Lista_Articoli);
+    const [nuovoArticoloLista, setNuovoArticoloLista] = useState("");
+
+    //EVENTO
+    const handleArticoli = (event) => {
+        event.preventDefault();
+        const articoloLista = nuovoArticoloLista.trim();
+
+        const nuovoArticoloForm = {
+            id: articoliLista.length+1,
+            articolo: articoloLista
+        }
+
+        setArticoliLista([...articoliLista, nuovoArticoloForm]);
+        setNuovoArticoloLista("");        
+    }
+
     return(
         <main>
             <div className="container">
                 <h2>Lista</h2>
-                {Lista_Articoli.map((articolo) => {
+                {articoliLista.map((articolo) => {
                     return <Lista key={articolo.id} articolo = {articolo}></Lista>
                 })}
             </div>
             <div className="container">
-                <form>
-                    <input type="text"value=""placeholder="Aggiungi articolo"/>
-                    <button type="submit">Aggiungi</button>
+                <form onSubmit={handleArticoli}>
+                    <input 
+                        type="text"
+                        value={nuovoArticoloLista}
+                        onChange={(event) => setNuovoArticoloLista(event.target.value)}
+                        placeholder="Aggiungi articolo"/>
+                    <button type="submit">Aggiungi articolo</button>
                 </form>
             </div>
         </main>
