@@ -1,3 +1,5 @@
+import Lista from "./Lista";
+
 let Lista_Articoli = [
     {
         id: 1,
@@ -23,22 +25,7 @@ const Main = () => {
     return(
         <main>
             <div className="container">
-                <h2>Lista</h2>
-                <ul>
-                    <li>test</li>
-                </ul>
-                <ul>
-                    <li>test</li>
-                </ul>
-                <ul>
-                    <li>test</li>
-                </ul>
-                <ul>
-                    <li>test</li>
-                </ul>
-                <ul>
-                    <li>test</li>
-                </ul>
+                <Lista></Lista>
             </div>
         </main>
     )
